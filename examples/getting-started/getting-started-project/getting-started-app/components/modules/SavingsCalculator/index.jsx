@@ -1,10 +1,13 @@
 import { Island } from '@hubspot/cms-components';
-import WeatherForecast from '../../islands/WeatherForecast.tsx?island';
+import SavingsCalculatorIsland from './SavingsCalculatorIsland.jsx?island';
+import './styles.css';
 import { ModuleFields, TextField } from '@hubspot/cms-components/fields';
 
-export function Component({ fieldValues }: any) {
-  const { headline } = fieldValues;
-  return <Island module={WeatherForecast} headline={headline} />;
+
+export function Component() {
+  return (
+    <Island module={SavingsCalculatorIsland} />
+  );
 }
 
 export const fields = (
@@ -18,5 +21,6 @@ export const fields = (
 );
 
 export const meta = {
-  label: 'Weather Module',
+  label: 'Savings Calculator',
+  isAvailableForNewContent: true,
 };
